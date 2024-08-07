@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app__section-task-list-item-active.app__section-task-list-item {
-    border: 2px solid #FFF;
+    border: 2px solid #ffffff;
 }
 
 .app__section-task-list-item-complete .app__section-task-icon-status circle {
