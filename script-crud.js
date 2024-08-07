@@ -1,3 +1,4 @@
+
 // encontrar o botão adicionar tarefa
 
 const btnAdicionarTarefa = document.querySelector('.app__button--add-task')
@@ -6,6 +7,10 @@ const textarea = document.querySelector('.app__form-textarea')
 const ulTarefas = document.querySelector('.app__section-task-list')
 
 const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
+
+function atualizarTarefas () {
+    localStorage.setItem('tarefas', JSON.stringify(tarefas))
+}
 
 function criarElementoTarefa(tarefa) {
     const li = document.createElement('li')
@@ -28,10 +33,14 @@ function criarElementoTarefa(tarefa) {
     botao.classList.add('app_button-edit')
 
     botao.onclick = () => {
-       const novaDescricao = prompt("Qual é o novo nome da tarefa?")
-        paragrafo.textContent = novaDescricao
-
-        
+        // debugger
+        const novaDescricao = prompt("Qual é o novo nome da tarefa?")
+        // console.log('Nova descrição da tarefa: ', novaDescricao)
+        if (novaDescricao) {
+            paragrafo.textContent = novaDescricao
+            tarefa.descricao = novaDescricao
+            atualizarTarefas()
+        }
     }
 
     const imagemBotao = document.createElement('img')
@@ -57,7 +66,7 @@ formAdicionarTarefa.addEventListener('submit', (evento) => {
     tarefas.push(tarefa)
     const elementoTarefa = criarElementoTarefa(tarefa)
     ulTarefas.append(elementoTarefa)
-    localStorage.setItem('tarefas', JSON.stringify(tarefas))
+    atualizarTarefas()
     textarea.value = ''
     formAdicionarTarefa.classList.add('hidden')
 })
