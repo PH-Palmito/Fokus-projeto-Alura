@@ -103,13 +103,13 @@ function iniciarOuPausar() {
     audioPlay.play()
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = "Pausar"
-    iniciarOuPausarBtIcone.setAttribute('src', `/public/imagens/pause.png`)
+    iniciarOuPausarBtIcone.setAttribute('src', `/imagens/pause.png`)
 }
 
 function zerar() {
     clearInterval(intervaloId)
     iniciarOuPausarBt.textContent = "Começar"
-    iniciarOuPausarBtIcone.setAttribute('src', `/public/imagens/play_arrow.png`)
+    iniciarOuPausarBtIcone.setAttribute('src', `/imagens/play_arrow.png`)
     intervaloId = null
 }
 
