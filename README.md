@@ -1,4 +1,4 @@
-@ -0,0 +1,48 @@
+
 # ⏳ Fokus - Pomodoro + To-Do List
 
 **Fokus** é um projeto criado com o objetivo de treinar a manipulação de elementos no **DOM com JavaScript puro**. Ele combina um **cronômetro Pomodoro** com uma **lista de tarefas (To-Do List)** — ideal para quem quer estudar ou trabalhar com mais foco.
